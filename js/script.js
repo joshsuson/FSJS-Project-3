@@ -36,8 +36,20 @@ $('#design').change( (e) => {
         });
     }
 });
-
 checkboxes.change((e) => {
     const clicked = e.target;
+    const selectedTime = e.target.dataset.dayAndTime;
+    checkboxes.each((i) => {
+        const eventTime = checkboxes[i].dataset.dayAndTime;
+    
+        if (checkboxes[i] !== clicked && selectedTime === eventTime) {
+           if (checkboxes[i].getAttribute('disabled') !== 'true') {
+            checkboxes[i].setAttribute('disabled', true);
+           } else {
+            checkboxes[i].removeAttribute('disabled');
+           }
+        }
+
+    });
     
 });
