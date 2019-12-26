@@ -40,7 +40,7 @@ $('#design').change( (e) => {
                 colorOptions.eq(i).show();
             }
         });
-        
+        colorOptions.eq(0).prop('selected', true);
     } else if ($(e.target).val() === 'heart js') {
         colorOptions.each((i) => {
             if (i >= 3) {
