@@ -167,6 +167,18 @@ option {
 	border-radius: 4px;
 }
 
+.invalid {
+	margin-top: -10px;
+	padding-left: 5px;
+	color: firebrick;
+}
+
+.valid {
+	margin-top: -10px;
+	padding-left: 5px;
+	color: lime;
+}
+
 /* ================================= 
   Helper Classes
 ==================================== */
