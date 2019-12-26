@@ -208,11 +208,20 @@ email.on('input', () => {
     }
 })
 
+ccNum.after(`<p id="ccNumTotal" class="invalid">Please enter 13 to 16 digits</p>`);
+const ccNumTotal = $('#ccNumTotal');
+ccNumTotal.hide();
 ccNum.on('input', () => {
     if (!ccRegex.test(ccNum.val())) {
         invalidMessage(invalidCCNum, validCCNum);
+        if (ccNum.val().length >= 9 && ccNum.val().length <= 16 && ccNumTotal.hide()) {
+            ccNumTotal.show();
+        }
     } else {
         validMessage(invalidCCNum, validCCNum);
+        if (ccNumTotal.show()) {
+            ccNumTotal.hide();
+        }
     }
 });
 
